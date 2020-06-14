@@ -11,12 +11,12 @@ script:
   - docker run -e CI=true hrs7991/react-test npm test
 
 after_success:
-  - docker build -t hrs7991/multi-client ./client
-  - docker build -t hrs7991/multi-nginx ./nginx
-  - docker build -t hrs7991/multi-server ./server
-  - docker build -t hrs7991 /multi-worker ./worker
+  - docker build -t harshitshah91/multi-client ./client
+  - docker build -t harshitshah91/multi-nginx ./nginx
+  - docker build -t harshitshah91/multi-server ./server
+  - docker build -t harshitshah91 /multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push hrs7991/multi-client
-  - docker push hrs7991/multi-nginx
-  - docker push hrs7991/multi-server
-  - docker push hrs7991/multi-worker
+  - docker push harshitshah91/multi-client
+  - docker push harshitshah91/multi-nginx
+  - docker push harshitshah91/multi-server
+  - docker push harshitshah91/multi-worker
